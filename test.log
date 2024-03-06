@@ -1,0 +1,820 @@
+Argument file that does not exist:
+┌ Yours ──────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory │
+└─────────────────────────────────────────────────────┘
+┌ Correct ────────────────────────────────────────────┐
+│ nm: 'missing_file': No such file                    │
+└─────────────────────────────────────────────────────┘
+
+
+No argument			-	Elf64:
+┌ Yours ────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory       │
+└───────────────────────────────────────────────────────────┘
+┌ Correct ──────────────────────────────────────────────────┐
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401060 t deregister_tm_clones                   │
+│ 0000000000401090 t register_tm_clones                     │
+│ 00000000004010d0 t __do_global_dtors_aux                  │
+│ 0000000000404008 b completed.0                            │
+│ 0000000000403e40 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401100 t frame_dummy                            │
+│ 0000000000403e38 d __frame_dummy_init_array_entry         │
+│ 0000000000401106 t my_staticfunc                          │
+│ 00000000004020e8 r __FRAME_END__                          │
+│ 0000000000403e48 d _DYNAMIC                               │
+│ 0000000000402010 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404000 W data_start                             │
+│ 0000000000404004 D _edata                                 │
+│ 0000000000401120 T _fini                                  │
+│ 0000000000404000 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000404018 B _end                                   │
+│ 0000000000401050 T _dl_relocate_static_pie                │
+│ 0000000000401020 T _start                                 │
+│ 0000000000404004 B __bss_start                            │
+│ 0000000000401114 T main                                   │
+│ 0000000000404010 B str_global                             │
+│ 000000000040110d T my_uselessfunc                         │
+│ 0000000000404008 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+└───────────────────────────────────────────────────────────┘
+
+
+One simple binary		-	Elf64:
+┌ Yours ────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory       │
+└───────────────────────────────────────────────────────────┘
+┌ Correct ──────────────────────────────────────────────────┐
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401060 t deregister_tm_clones                   │
+│ 0000000000401090 t register_tm_clones                     │
+│ 00000000004010d0 t __do_global_dtors_aux                  │
+│ 0000000000404008 b completed.0                            │
+│ 0000000000403e40 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401100 t frame_dummy                            │
+│ 0000000000403e38 d __frame_dummy_init_array_entry         │
+│ 0000000000401106 t my_staticfunc                          │
+│ 00000000004020e8 r __FRAME_END__                          │
+│ 0000000000403e48 d _DYNAMIC                               │
+│ 0000000000402010 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404000 W data_start                             │
+│ 0000000000404004 D _edata                                 │
+│ 0000000000401120 T _fini                                  │
+│ 0000000000404000 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000404018 B _end                                   │
+│ 0000000000401050 T _dl_relocate_static_pie                │
+│ 0000000000401020 T _start                                 │
+│ 0000000000404004 B __bss_start                            │
+│ 0000000000401114 T main                                   │
+│ 0000000000404010 B str_global                             │
+│ 000000000040110d T my_uselessfunc                         │
+│ 0000000000404008 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+└───────────────────────────────────────────────────────────┘
+
+
+One simple binary		-	Elf32:
+┌ Yours ──────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory │
+└─────────────────────────────────────────────────────┘
+┌ Correct ────────────────────────────────────────────┐
+│ 08049081 t __wrap_main                              │
+│ 08048220 r __abi_tag                                │
+│ 080490b0 t deregister_tm_clones                     │
+│ 080490f0 t register_tm_clones                       │
+│ 08049130 t __do_global_dtors_aux                    │
+│ 0804c008 b completed.0                              │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry   │
+│ 08049160 t frame_dummy                              │
+│ 0804bf00 d __frame_dummy_init_array_entry           │
+│ 08049166 t my_staticfunc                            │
+│ 0804a10c r __FRAME_END__                            │
+│ 0804bf08 d _DYNAMIC                                 │
+│ 0804a00c r __GNU_EH_FRAME_HDR                       │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                    │
+│          U __libc_start_main@GLIBC_2.34             │
+│ 080490a0 T __x86.get_pc_thunk.bx                    │
+│ 0804c004 W data_start                               │
+│ 0804c008 D _edata                                   │
+│ 0804917c T _fini                                    │
+│ 0804c004 D __data_start                             │
+│          w __gmon_start__                           │
+│ 0804a008 R __dso_handle                             │
+│ 0804a004 R _IO_stdin_used                           │
+│ 0804c010 B _end                                     │
+│ 08049090 T _dl_relocate_static_pie                  │
+│ 08049050 T _start                                   │
+│ 0804a000 R _fp_hw                                   │
+│ 0804c008 B __bss_start                              │
+│ 08049172 T main                                     │
+│ 0804c00c B str_global                               │
+│ 0804916c T my_uselessfunc                           │
+│ 0804c008 D __TMC_END__                              │
+│ 08049000 T _init                                    │
+└─────────────────────────────────────────────────────┘
+
+
+One archive			-	Elf64:
+┌ Yours ─────────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory            │
+└────────────────────────────────────────────────────────────────┘
+┌ Correct ───────────────────────────────────────────────────────┐
+│                                                                │
+│ biiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig_naaaaaaaaaaame_file.o: │
+│ 0000000000000004 b staticGlobalVar                             │
+│ 0000000000000008 b staticLocalVar.0                            │
+│ 0000000000000000 B globalVar                                   │
+│ 0000000000000000 T main                                        │
+│                  U malloc                                      │
+│                  U free                                        │
+│ 0000000000000048 T myFunction                                  │
+│                  U puts                                        │
+│                                                                │
+│ my_putchar.o:                                                  │
+│ 0000000000000000 T my_putchar                                  │
+│                                                                │
+│ my_putstr.o:                                                   │
+│ 0000000000000000 T my_putstr                                   │
+│                                                                │
+│ simple_main.o:                                                 │
+│ 0000000000000000 t my_staticfunc                               │
+│ 0000000000000000 B str_global                                  │
+│ 0000000000000007 T my_uselessfunc                              │
+│ 000000000000000e T main                                        │
+└────────────────────────────────────────────────────────────────┘
+
+
+One archive			-	Elf32:
+┌ Yours ─────────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory            │
+└────────────────────────────────────────────────────────────────┘
+┌ Correct ───────────────────────────────────────────────────────┐
+│                                                                │
+│ biiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig_naaaaaaaaaaame_file.o: │
+│ 00000004 b staticGlobalVar                                     │
+│ 00000008 b staticLocalVar.0                                    │
+│ 00000000 B globalVar                                           │
+│ 00000000 T main                                                │
+│          U malloc                                              │
+│          U free                                                │
+│ 00000056 T myFunction                                          │
+│          U puts                                                │
+│                                                                │
+│ my_putchar.o:                                                  │
+│ 00000000 T my_putchar                                          │
+│                                                                │
+│ my_putstr.o:                                                   │
+│ 00000000 T my_putstr                                           │
+│                                                                │
+│ simple_main.o:                                                 │
+│ 00000000 t my_staticfunc                                       │
+│ 00000000 B str_global                                          │
+│ 00000006 T my_uselessfunc                                      │
+│ 0000000c T main                                                │
+└────────────────────────────────────────────────────────────────┘
+
+
+Multiple binarys		-	Elf64:
+┌ Yours ────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory       │
+└───────────────────────────────────────────────────────────┘
+┌ Correct ──────────────────────────────────────────────────┐
+│                                                           │
+│ execs/simple_main64:                                      │
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401060 t deregister_tm_clones                   │
+│ 0000000000401090 t register_tm_clones                     │
+│ 00000000004010d0 t __do_global_dtors_aux                  │
+│ 0000000000404008 b completed.0                            │
+│ 0000000000403e40 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401100 t frame_dummy                            │
+│ 0000000000403e38 d __frame_dummy_init_array_entry         │
+│ 0000000000401106 t my_staticfunc                          │
+│ 00000000004020e8 r __FRAME_END__                          │
+│ 0000000000403e48 d _DYNAMIC                               │
+│ 0000000000402010 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404000 W data_start                             │
+│ 0000000000404004 D _edata                                 │
+│ 0000000000401120 T _fini                                  │
+│ 0000000000404000 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000404018 B _end                                   │
+│ 0000000000401050 T _dl_relocate_static_pie                │
+│ 0000000000401020 T _start                                 │
+│ 0000000000404004 B __bss_start                            │
+│ 0000000000401114 T main                                   │
+│ 0000000000404010 B str_global                             │
+│ 000000000040110d T my_uselessfunc                         │
+│ 0000000000404008 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+│                                                           │
+│ execs/another_main64:                                     │
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401080 t deregister_tm_clones                   │
+│ 00000000004010b0 t register_tm_clones                     │
+│ 00000000004010f0 t __do_global_dtors_aux                  │
+│ 000000000040400c b completed.0                            │
+│ 0000000000403e00 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401120 t frame_dummy                            │
+│ 0000000000403df8 d __frame_dummy_init_array_entry         │
+│ 0000000000404014 b staticGlobalVar                        │
+│ 0000000000404018 b staticLocalVar.0                       │
+│ 0000000000402100 r __FRAME_END__                          │
+│ 0000000000403e08 d _DYNAMIC                               │
+│ 0000000000402020 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404008 W data_start                             │
+│                  U puts@GLIBC_2.2.5                       │
+│ 000000000040400c D _edata                                 │
+│ 0000000000401168 T _fini                                  │
+│ 0000000000404010 B globalVar                              │
+│ 0000000000404008 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000401154 T myFunction                             │
+│ 0000000000404020 B _end                                   │
+│ 0000000000401070 T _dl_relocate_static_pie                │
+│ 0000000000401040 T _start                                 │
+│ 000000000040400c B __bss_start                            │
+│ 0000000000401126 T main                                   │
+│ 0000000000404010 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+│                                                           │
+│ execs/simple_main64:                                      │
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401060 t deregister_tm_clones                   │
+│ 0000000000401090 t register_tm_clones                     │
+│ 00000000004010d0 t __do_global_dtors_aux                  │
+│ 0000000000404008 b completed.0                            │
+│ 0000000000403e40 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401100 t frame_dummy                            │
+│ 0000000000403e38 d __frame_dummy_init_array_entry         │
+│ 0000000000401106 t my_staticfunc                          │
+│ 00000000004020e8 r __FRAME_END__                          │
+│ 0000000000403e48 d _DYNAMIC                               │
+│ 0000000000402010 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404000 W data_start                             │
+│ 0000000000404004 D _edata                                 │
+│ 0000000000401120 T _fini                                  │
+│ 0000000000404000 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000404018 B _end                                   │
+│ 0000000000401050 T _dl_relocate_static_pie                │
+│ 0000000000401020 T _start                                 │
+│ 0000000000404004 B __bss_start                            │
+│ 0000000000401114 T main                                   │
+│ 0000000000404010 B str_global                             │
+│ 000000000040110d T my_uselessfunc                         │
+│ 0000000000404008 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+└───────────────────────────────────────────────────────────┘
+
+
+Multiple binarys		-	Elf32:
+┌ Yours ──────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory │
+└─────────────────────────────────────────────────────┘
+┌ Correct ────────────────────────────────────────────┐
+│                                                     │
+│ execs/simple_main32:                                │
+│ 08049081 t __wrap_main                              │
+│ 08048220 r __abi_tag                                │
+│ 080490b0 t deregister_tm_clones                     │
+│ 080490f0 t register_tm_clones                       │
+│ 08049130 t __do_global_dtors_aux                    │
+│ 0804c008 b completed.0                              │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry   │
+│ 08049160 t frame_dummy                              │
+│ 0804bf00 d __frame_dummy_init_array_entry           │
+│ 08049166 t my_staticfunc                            │
+│ 0804a10c r __FRAME_END__                            │
+│ 0804bf08 d _DYNAMIC                                 │
+│ 0804a00c r __GNU_EH_FRAME_HDR                       │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                    │
+│          U __libc_start_main@GLIBC_2.34             │
+│ 080490a0 T __x86.get_pc_thunk.bx                    │
+│ 0804c004 W data_start                               │
+│ 0804c008 D _edata                                   │
+│ 0804917c T _fini                                    │
+│ 0804c004 D __data_start                             │
+│          w __gmon_start__                           │
+│ 0804a008 R __dso_handle                             │
+│ 0804a004 R _IO_stdin_used                           │
+│ 0804c010 B _end                                     │
+│ 08049090 T _dl_relocate_static_pie                  │
+│ 08049050 T _start                                   │
+│ 0804a000 R _fp_hw                                   │
+│ 0804c008 B __bss_start                              │
+│ 08049172 T main                                     │
+│ 0804c00c B str_global                               │
+│ 0804916c T my_uselessfunc                           │
+│ 0804c008 D __TMC_END__                              │
+│ 08049000 T _init                                    │
+│                                                     │
+│ execs/another_main32:                               │
+│ 08049091 t __wrap_main                              │
+│ 08048220 r __abi_tag                                │
+│ 080490c0 t deregister_tm_clones                     │
+│ 08049100 t register_tm_clones                       │
+│ 08049140 t __do_global_dtors_aux                    │
+│ 0804c00c b completed.0                              │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry   │
+│ 08049170 t frame_dummy                              │
+│ 0804bf00 d __frame_dummy_init_array_entry           │
+│ 0804c014 b staticGlobalVar                          │
+│ 0804c018 b staticLocalVar.0                         │
+│ 0804a0f4 r __FRAME_END__                            │
+│ 0804bf08 d _DYNAMIC                                 │
+│ 0804a01c r __GNU_EH_FRAME_HDR                       │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                    │
+│          U __libc_start_main@GLIBC_2.34             │
+│ 080490b0 T __x86.get_pc_thunk.bx                    │
+│ 0804c008 W data_start                               │
+│ 0804c00c D _edata                                   │
+│ 080491bc T _fini                                    │
+│ 0804c010 B globalVar                                │
+│ 0804c008 D __data_start                             │
+│          U puts@GLIBC_2.0                           │
+│          w __gmon_start__                           │
+│ 0804a008 R __dso_handle                             │
+│ 0804a004 R _IO_stdin_used                           │
+│ 080491a3 T myFunction                               │
+│ 0804c01c B _end                                     │
+│ 080490a0 T _dl_relocate_static_pie                  │
+│ 08049060 T _start                                   │
+│ 0804a000 R _fp_hw                                   │
+│ 0804c00c B __bss_start                              │
+│ 08049176 T main                                     │
+│ 0804c00c D __TMC_END__                              │
+│ 08049000 T _init                                    │
+│                                                     │
+│ execs/simple_main32:                                │
+│ 08049081 t __wrap_main                              │
+│ 08048220 r __abi_tag                                │
+│ 080490b0 t deregister_tm_clones                     │
+│ 080490f0 t register_tm_clones                       │
+│ 08049130 t __do_global_dtors_aux                    │
+│ 0804c008 b completed.0                              │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry   │
+│ 08049160 t frame_dummy                              │
+│ 0804bf00 d __frame_dummy_init_array_entry           │
+│ 08049166 t my_staticfunc                            │
+│ 0804a10c r __FRAME_END__                            │
+│ 0804bf08 d _DYNAMIC                                 │
+│ 0804a00c r __GNU_EH_FRAME_HDR                       │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                    │
+│          U __libc_start_main@GLIBC_2.34             │
+│ 080490a0 T __x86.get_pc_thunk.bx                    │
+│ 0804c004 W data_start                               │
+│ 0804c008 D _edata                                   │
+│ 0804917c T _fini                                    │
+│ 0804c004 D __data_start                             │
+│          w __gmon_start__                           │
+│ 0804a008 R __dso_handle                             │
+│ 0804a004 R _IO_stdin_used                           │
+│ 0804c010 B _end                                     │
+│ 08049090 T _dl_relocate_static_pie                  │
+│ 08049050 T _start                                   │
+│ 0804a000 R _fp_hw                                   │
+│ 0804c008 B __bss_start                              │
+│ 08049172 T main                                     │
+│ 0804c00c B str_global                               │
+│ 0804916c T my_uselessfunc                           │
+│ 0804c008 D __TMC_END__                              │
+│ 08049000 T _init                                    │
+└─────────────────────────────────────────────────────┘
+
+
+Multiple binarys		-	Elf32/Elf64:
+┌ Yours ────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory       │
+└───────────────────────────────────────────────────────────┘
+┌ Correct ──────────────────────────────────────────────────┐
+│                                                           │
+│ execs/simple_main32:                                      │
+│ 08049081 t __wrap_main                                    │
+│ 08048220 r __abi_tag                                      │
+│ 080490b0 t deregister_tm_clones                           │
+│ 080490f0 t register_tm_clones                             │
+│ 08049130 t __do_global_dtors_aux                          │
+│ 0804c008 b completed.0                                    │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry         │
+│ 08049160 t frame_dummy                                    │
+│ 0804bf00 d __frame_dummy_init_array_entry                 │
+│ 08049166 t my_staticfunc                                  │
+│ 0804a10c r __FRAME_END__                                  │
+│ 0804bf08 d _DYNAMIC                                       │
+│ 0804a00c r __GNU_EH_FRAME_HDR                             │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                          │
+│          U __libc_start_main@GLIBC_2.34                   │
+│ 080490a0 T __x86.get_pc_thunk.bx                          │
+│ 0804c004 W data_start                                     │
+│ 0804c008 D _edata                                         │
+│ 0804917c T _fini                                          │
+│ 0804c004 D __data_start                                   │
+│          w __gmon_start__                                 │
+│ 0804a008 R __dso_handle                                   │
+│ 0804a004 R _IO_stdin_used                                 │
+│ 0804c010 B _end                                           │
+│ 08049090 T _dl_relocate_static_pie                        │
+│ 08049050 T _start                                         │
+│ 0804a000 R _fp_hw                                         │
+│ 0804c008 B __bss_start                                    │
+│ 08049172 T main                                           │
+│ 0804c00c B str_global                                     │
+│ 0804916c T my_uselessfunc                                 │
+│ 0804c008 D __TMC_END__                                    │
+│ 08049000 T _init                                          │
+│                                                           │
+│ execs/another_main64:                                     │
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401080 t deregister_tm_clones                   │
+│ 00000000004010b0 t register_tm_clones                     │
+│ 00000000004010f0 t __do_global_dtors_aux                  │
+│ 000000000040400c b completed.0                            │
+│ 0000000000403e00 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401120 t frame_dummy                            │
+│ 0000000000403df8 d __frame_dummy_init_array_entry         │
+│ 0000000000404014 b staticGlobalVar                        │
+│ 0000000000404018 b staticLocalVar.0                       │
+│ 0000000000402100 r __FRAME_END__                          │
+│ 0000000000403e08 d _DYNAMIC                               │
+│ 0000000000402020 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404008 W data_start                             │
+│                  U puts@GLIBC_2.2.5                       │
+│ 000000000040400c D _edata                                 │
+│ 0000000000401168 T _fini                                  │
+│ 0000000000404010 B globalVar                              │
+│ 0000000000404008 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000401154 T myFunction                             │
+│ 0000000000404020 B _end                                   │
+│ 0000000000401070 T _dl_relocate_static_pie                │
+│ 0000000000401040 T _start                                 │
+│ 000000000040400c B __bss_start                            │
+│ 0000000000401126 T main                                   │
+│ 0000000000404010 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+│                                                           │
+│ execs/simple_main32:                                      │
+│ 08049081 t __wrap_main                                    │
+│ 08048220 r __abi_tag                                      │
+│ 080490b0 t deregister_tm_clones                           │
+│ 080490f0 t register_tm_clones                             │
+│ 08049130 t __do_global_dtors_aux                          │
+│ 0804c008 b completed.0                                    │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry         │
+│ 08049160 t frame_dummy                                    │
+│ 0804bf00 d __frame_dummy_init_array_entry                 │
+│ 08049166 t my_staticfunc                                  │
+│ 0804a10c r __FRAME_END__                                  │
+│ 0804bf08 d _DYNAMIC                                       │
+│ 0804a00c r __GNU_EH_FRAME_HDR                             │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                          │
+│          U __libc_start_main@GLIBC_2.34                   │
+│ 080490a0 T __x86.get_pc_thunk.bx                          │
+│ 0804c004 W data_start                                     │
+│ 0804c008 D _edata                                         │
+│ 0804917c T _fini                                          │
+│ 0804c004 D __data_start                                   │
+│          w __gmon_start__                                 │
+│ 0804a008 R __dso_handle                                   │
+│ 0804a004 R _IO_stdin_used                                 │
+│ 0804c010 B _end                                           │
+│ 08049090 T _dl_relocate_static_pie                        │
+│ 08049050 T _start                                         │
+│ 0804a000 R _fp_hw                                         │
+│ 0804c008 B __bss_start                                    │
+│ 08049172 T main                                           │
+│ 0804c00c B str_global                                     │
+│ 0804916c T my_uselessfunc                                 │
+│ 0804c008 D __TMC_END__                                    │
+│ 08049000 T _init                                          │
+│                                                           │
+│ execs/simple_main64:                                      │
+│ 000000000040039c r __abi_tag                              │
+│ 0000000000401060 t deregister_tm_clones                   │
+│ 0000000000401090 t register_tm_clones                     │
+│ 00000000004010d0 t __do_global_dtors_aux                  │
+│ 0000000000404008 b completed.0                            │
+│ 0000000000403e40 d __do_global_dtors_aux_fini_array_entry │
+│ 0000000000401100 t frame_dummy                            │
+│ 0000000000403e38 d __frame_dummy_init_array_entry         │
+│ 0000000000401106 t my_staticfunc                          │
+│ 00000000004020e8 r __FRAME_END__                          │
+│ 0000000000403e48 d _DYNAMIC                               │
+│ 0000000000402010 r __GNU_EH_FRAME_HDR                     │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                  │
+│                  U __libc_start_main@GLIBC_2.34           │
+│ 0000000000404000 W data_start                             │
+│ 0000000000404004 D _edata                                 │
+│ 0000000000401120 T _fini                                  │
+│ 0000000000404000 D __data_start                           │
+│                  w __gmon_start__                         │
+│ 0000000000402008 R __dso_handle                           │
+│ 0000000000402000 R _IO_stdin_used                         │
+│ 0000000000404018 B _end                                   │
+│ 0000000000401050 T _dl_relocate_static_pie                │
+│ 0000000000401020 T _start                                 │
+│ 0000000000404004 B __bss_start                            │
+│ 0000000000401114 T main                                   │
+│ 0000000000404010 B str_global                             │
+│ 000000000040110d T my_uselessfunc                         │
+│ 0000000000404008 D __TMC_END__                            │
+│ 0000000000401000 T _init                                  │
+└───────────────────────────────────────────────────────────┘
+
+
+Multiple binarys/archives	-	Elf32/Elf64:
+┌ Yours ─────────────────────────────────────────────────────────┐
+│ /bin/sh: line 1: ./my_nm: No such file or directory            │
+└────────────────────────────────────────────────────────────────┘
+┌ Correct ───────────────────────────────────────────────────────┐
+│                                                                │
+│ execs/simple_main32:                                           │
+│ 08049081 t __wrap_main                                         │
+│ 08048220 r __abi_tag                                           │
+│ 080490b0 t deregister_tm_clones                                │
+│ 080490f0 t register_tm_clones                                  │
+│ 08049130 t __do_global_dtors_aux                               │
+│ 0804c008 b completed.0                                         │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry              │
+│ 08049160 t frame_dummy                                         │
+│ 0804bf00 d __frame_dummy_init_array_entry                      │
+│ 08049166 t my_staticfunc                                       │
+│ 0804a10c r __FRAME_END__                                       │
+│ 0804bf08 d _DYNAMIC                                            │
+│ 0804a00c r __GNU_EH_FRAME_HDR                                  │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                               │
+│          U __libc_start_main@GLIBC_2.34                        │
+│ 080490a0 T __x86.get_pc_thunk.bx                               │
+│ 0804c004 W data_start                                          │
+│ 0804c008 D _edata                                              │
+│ 0804917c T _fini                                               │
+│ 0804c004 D __data_start                                        │
+│          w __gmon_start__                                      │
+│ 0804a008 R __dso_handle                                        │
+│ 0804a004 R _IO_stdin_used                                      │
+│ 0804c010 B _end                                                │
+│ 08049090 T _dl_relocate_static_pie                             │
+│ 08049050 T _start                                              │
+│ 0804a000 R _fp_hw                                              │
+│ 0804c008 B __bss_start                                         │
+│ 08049172 T main                                                │
+│ 0804c00c B str_global                                          │
+│ 0804916c T my_uselessfunc                                      │
+│ 0804c008 D __TMC_END__                                         │
+│ 08049000 T _init                                               │
+│                                                                │
+│ execs/another_main64:                                          │
+│ 000000000040039c r __abi_tag                                   │
+│ 0000000000401080 t deregister_tm_clones                        │
+│ 00000000004010b0 t register_tm_clones                          │
+│ 00000000004010f0 t __do_global_dtors_aux                       │
+│ 000000000040400c b completed.0                                 │
+│ 0000000000403e00 d __do_global_dtors_aux_fini_array_entry      │
+│ 0000000000401120 t frame_dummy                                 │
+│ 0000000000403df8 d __frame_dummy_init_array_entry              │
+│ 0000000000404014 b staticGlobalVar                             │
+│ 0000000000404018 b staticLocalVar.0                            │
+│ 0000000000402100 r __FRAME_END__                               │
+│ 0000000000403e08 d _DYNAMIC                                    │
+│ 0000000000402020 r __GNU_EH_FRAME_HDR                          │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                       │
+│                  U __libc_start_main@GLIBC_2.34                │
+│ 0000000000404008 W data_start                                  │
+│                  U puts@GLIBC_2.2.5                            │
+│ 000000000040400c D _edata                                      │
+│ 0000000000401168 T _fini                                       │
+│ 0000000000404010 B globalVar                                   │
+│ 0000000000404008 D __data_start                                │
+│                  w __gmon_start__                              │
+│ 0000000000402008 R __dso_handle                                │
+│ 0000000000402000 R _IO_stdin_used                              │
+│ 0000000000401154 T myFunction                                  │
+│ 0000000000404020 B _end                                        │
+│ 0000000000401070 T _dl_relocate_static_pie                     │
+│ 0000000000401040 T _start                                      │
+│ 000000000040400c B __bss_start                                 │
+│ 0000000000401126 T main                                        │
+│ 0000000000404010 D __TMC_END__                                 │
+│ 0000000000401000 T _init                                       │
+│                                                                │
+│ execs/mylib32.a:                                               │
+│                                                                │
+│ biiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig_naaaaaaaaaaame_file.o: │
+│ 00000004 b staticGlobalVar                                     │
+│ 00000008 b staticLocalVar.0                                    │
+│ 00000000 B globalVar                                           │
+│ 00000000 T main                                                │
+│          U malloc                                              │
+│          U free                                                │
+│ 00000056 T myFunction                                          │
+│          U puts                                                │
+│                                                                │
+│ my_putchar.o:                                                  │
+│ 00000000 T my_putchar                                          │
+│                                                                │
+│ my_putstr.o:                                                   │
+│ 00000000 T my_putstr                                           │
+│                                                                │
+│ simple_main.o:                                                 │
+│ 00000000 t my_staticfunc                                       │
+│ 00000000 B str_global                                          │
+│ 00000006 T my_uselessfunc                                      │
+│ 0000000c T main                                                │
+│                                                                │
+│ execs/mylib32-64.a:                                            │
+│                                                                │
+│ ftpclientbonus32.o:                                            │
+│ 00000000 T main                                                │
+│          U dprintf                                             │
+│          U socket                                              │
+│          U __errno_location                                    │
+│          U strerror                                            │
+│          U inet_addr                                           │
+│          U atoi                                                │
+│          U htons                                               │
+│          U stdin                                               │
+│          U getline                                             │
+│          U connect                                             │
+│          U strlen                                              │
+│          U strcpy                                              │
+│          U write                                               │
+│          U memset                                              │
+│          U select                                              │
+│          U read                                                │
+│          U free                                                │
+│          U close                                               │
+│                                                                │
+│ ftpserverbonus64.o:                                            │
+│ 0000000000000000 T createServer                                │
+│                  U socket                                      │
+│                  U __errno_location                            │
+│                  U strerror                                    │
+│                  U dprintf                                     │
+│                  U setsockopt                                  │
+│                  U htonl                                       │
+│                  U htons                                       │
+│                  U bind                                        │
+│                  U close                                       │
+│                  U listen                                      │
+│ 00000000000001a5 T handle_client                               │
+│                  U strcpy                                      │
+│                  U send                                        │
+│                  U strcmp                                      │
+│                  U memset                                      │
+│                  U stdin                                       │
+│                  U getline                                     │
+│ 00000000000002a6 T closeSocket                                 │
+│ 00000000000002d9 T broadcast_message                           │
+│ 000000000000039b T main                                        │
+│                  U atoi                                        │
+│                  U select                                      │
+│                  U accept                                      │
+│                  U read                                        │
+│                  U strdup                                      │
+│                  U ntohs                                       │
+│                  U inet_ntoa                                   │
+│                                                                │
+│ execs/mylib32.a:                                               │
+│                                                                │
+│ biiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig_naaaaaaaaaaame_file.o: │
+│ 00000004 b staticGlobalVar                                     │
+│ 00000008 b staticLocalVar.0                                    │
+│ 00000000 B globalVar                                           │
+│ 00000000 T main                                                │
+│          U malloc                                              │
+│          U free                                                │
+│ 00000056 T myFunction                                          │
+│          U puts                                                │
+│                                                                │
+│ my_putchar.o:                                                  │
+│ 00000000 T my_putchar                                          │
+│                                                                │
+│ my_putstr.o:                                                   │
+│ 00000000 T my_putstr                                           │
+│                                                                │
+│ simple_main.o:                                                 │
+│ 00000000 t my_staticfunc                                       │
+│ 00000000 B str_global                                          │
+│ 00000006 T my_uselessfunc                                      │
+│ 0000000c T main                                                │
+│                                                                │
+│ execs/simple_main32:                                           │
+│ 08049081 t __wrap_main                                         │
+│ 08048220 r __abi_tag                                           │
+│ 080490b0 t deregister_tm_clones                                │
+│ 080490f0 t register_tm_clones                                  │
+│ 08049130 t __do_global_dtors_aux                               │
+│ 0804c008 b completed.0                                         │
+│ 0804bf04 d __do_global_dtors_aux_fini_array_entry              │
+│ 08049160 t frame_dummy                                         │
+│ 0804bf00 d __frame_dummy_init_array_entry                      │
+│ 08049166 t my_staticfunc                                       │
+│ 0804a10c r __FRAME_END__                                       │
+│ 0804bf08 d _DYNAMIC                                            │
+│ 0804a00c r __GNU_EH_FRAME_HDR                                  │
+│ 0804bff4 d _GLOBAL_OFFSET_TABLE_                               │
+│          U __libc_start_main@GLIBC_2.34                        │
+│ 080490a0 T __x86.get_pc_thunk.bx                               │
+│ 0804c004 W data_start                                          │
+│ 0804c008 D _edata                                              │
+│ 0804917c T _fini                                               │
+│ 0804c004 D __data_start                                        │
+│          w __gmon_start__                                      │
+│ 0804a008 R __dso_handle                                        │
+│ 0804a004 R _IO_stdin_used                                      │
+│ 0804c010 B _end                                                │
+│ 08049090 T _dl_relocate_static_pie                             │
+│ 08049050 T _start                                              │
+│ 0804a000 R _fp_hw                                              │
+│ 0804c008 B __bss_start                                         │
+│ 08049172 T main                                                │
+│ 0804c00c B str_global                                          │
+│ 0804916c T my_uselessfunc                                      │
+│ 0804c008 D __TMC_END__                                         │
+│ 08049000 T _init                                               │
+│                                                                │
+│ execs/simple_main64:                                           │
+│ 000000000040039c r __abi_tag                                   │
+│ 0000000000401060 t deregister_tm_clones                        │
+│ 0000000000401090 t register_tm_clones                          │
+│ 00000000004010d0 t __do_global_dtors_aux                       │
+│ 0000000000404008 b completed.0                                 │
+│ 0000000000403e40 d __do_global_dtors_aux_fini_array_entry      │
+│ 0000000000401100 t frame_dummy                                 │
+│ 0000000000403e38 d __frame_dummy_init_array_entry              │
+│ 0000000000401106 t my_staticfunc                               │
+│ 00000000004020e8 r __FRAME_END__                               │
+│ 0000000000403e48 d _DYNAMIC                                    │
+│ 0000000000402010 r __GNU_EH_FRAME_HDR                          │
+│ 0000000000403fe8 d _GLOBAL_OFFSET_TABLE_                       │
+│                  U __libc_start_main@GLIBC_2.34                │
+│ 0000000000404000 W data_start                                  │
+│ 0000000000404004 D _edata                                      │
+│ 0000000000401120 T _fini                                       │
+│ 0000000000404000 D __data_start                                │
+│                  w __gmon_start__                              │
+│ 0000000000402008 R __dso_handle                                │
+│ 0000000000402000 R _IO_stdin_used                              │
+│ 0000000000404018 B _end                                        │
+│ 0000000000401050 T _dl_relocate_static_pie                     │
+│ 0000000000401020 T _start                                      │
+│ 0000000000404004 B __bss_start                                 │
+│ 0000000000401114 T main                                        │
+│ 0000000000404010 B str_global                                  │
+│ 000000000040110d T my_uselessfunc                              │
+│ 0000000000404008 D __TMC_END__                                 │
+│ 0000000000401000 T _init                                       │
+│                                                                │
+│ execs/mylib64.a:                                               │
+│                                                                │
+│ biiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig_naaaaaaaaaaame_file.o: │
+│ 0000000000000004 b staticGlobalVar                             │
+│ 0000000000000008 b staticLocalVar.0                            │
+│ 0000000000000000 B globalVar                                   │
+│ 0000000000000000 T main                                        │
+│                  U malloc                                      │
+│                  U free                                        │
+│ 0000000000000048 T myFunction                                  │
+│                  U puts                                        │
+│                                                                │
+│ my_putchar.o:                                                  │
+│ 0000000000000000 T my_putchar                                  │
+│                                                                │
+│ my_putstr.o:                                                   │
+│ 0000000000000000 T my_putstr                                   │
+│                                                                │
+│ simple_main.o:                                                 │
+│ 0000000000000000 t my_staticfunc                               │
+│ 0000000000000000 B str_global                                  │
+│ 0000000000000007 T my_uselessfunc                              │
+│ 000000000000000e T main                                        │
+└────────────────────────────────────────────────────────────────┘
+
+
