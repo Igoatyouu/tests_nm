@@ -66,7 +66,7 @@ def my_tests() -> float:
             continue
 
         name = name[2:]
-        valid_output = subprocess.getoutput(f"nm --no-sort {command}")
+        valid_output = subprocess.getoutput(f"nm {command}")
         your_output = subprocess.getoutput(f"./my_nm {command}")
         custom_flagsnm = ""
 
