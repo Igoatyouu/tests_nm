@@ -52,6 +52,9 @@ execs/simple_main32 execs/another_main64 execs/mylib32.a execs/mylib32-64.a exec
 > Argument file that does not exist
 missing_file
 
+> Truncated binary
+execs/truncated_file | grep "nm"
+
 >>> End
 
 >>> objdump - Basic tests
