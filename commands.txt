@@ -1,11 +1,14 @@
 :: // NM tests \\
-! nm --no-sort
+! nm
 ? ./my_nm
 
 >>> NM - Error handling
 
 > Argument file that does not exist
 missing_file
+
+> Truncated binary
+execs/truncated_file | grep "nm"
 
 >>> End
 
