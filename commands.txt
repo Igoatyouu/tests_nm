@@ -1,4 +1,6 @@
-:: Read the readme file before adding new tests
+:: // NM tests \\
+! nm --no-sort
+? ./my_nm
 
 >>> NM - Error handling
 
@@ -8,6 +10,48 @@ missing_file
 >>> End
 
 >>> NM - Basic tests
+
+> No argument			-	Elf64
+
+
+> One simple binary		-	Elf64
+execs/simple_main64
+
+> One simple binary		-	Elf32
+execs/simple_main32
+
+> One archive			-	Elf64
+execs/mylib64.a
+
+> One archive			-	Elf32
+execs/mylib32.a
+
+> Multiple binarys		-	Elf64
+execs/simple_main64 execs/another_main64 execs/simple_main64
+
+> Multiple binarys		-	Elf32
+execs/simple_main32 execs/another_main32 execs/simple_main32
+
+> Multiple binarys		-	Elf32/Elf64
+execs/simple_main32 execs/another_main64 execs/simple_main32 execs/simple_main64
+
+> Multiple binarys/archives	-	Elf32/Elf64
+execs/simple_main32 execs/another_main64 execs/mylib32.a execs/mylib32-64.a execs/mylib32.a execs/simple_main32 execs/simple_main64 execs/mylib64.a
+
+>>> End
+
+:: // OBJDUMP tests \\
+! objdump -fs
+? ./my_objdump
+
+>>> objdump - Error handling
+
+> Argument file that does not exist
+missing_file
+
+>>> End
+
+>>> objdump - Basic tests
 
 > No argument			-	Elf64
 
